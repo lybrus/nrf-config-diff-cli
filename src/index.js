@@ -66,7 +66,6 @@ ${unknown.length ? `
 ` : ''}
 #define USE_APP_CONFIG
 
-/* Changed variables */
 ${changed.map(({ key, value }) => `#define ${key} ${value}`).join('\n')}
 
 #endif // APP_CONFIG_H__
@@ -76,7 +75,7 @@ ${changed.map(({ key, value }) => `#define ${key} ${value}`).join('\n')}
         const { override } = await inquirer.prompt([{
             type: 'confirm',
             name: 'override',
-            message: `${appSettingsPath} is exists, do you want to override it?`,
+            message: `${appSettingsFile} is exists, do you want to override it?`,
             default: false
         }])
 
