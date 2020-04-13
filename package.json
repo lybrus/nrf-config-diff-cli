@@ -1,6 +1,6 @@
 {
     "name": "nrf-config-diff-cli",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Config diff calculation for NRF SDK",
     "repository": "git@github.com:lybrus/nrf-config-diff-cli.git",
     "author": "Damir Rashidov <damir@rashidov.eu>",
@@ -23,7 +23,8 @@
         "test:staged": "dotenv -e .env.test jest --findRelatedTests",
         "lint": "eslint '**/*.{js,ts,tsx}'",
         "lint:fix": "yarn lint -- --fix",
-        "prettier": "prettier '**/*' --write"
+        "prettier": "prettier '**/*' --write",
+        "script": "babel-node src/script.js"
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",
@@ -54,7 +55,8 @@
         "nodemon": "^2.0.3",
         "prettier": "^2.0.4",
         "rollup": "^2.6.0",
-        "rollup-plugin-babel": "^4.4.0"
+        "rollup-plugin-babel": "^4.4.0",
+        "shell-exec": "^1.0.2"
     },
     "dependencies": {
         "autocast": "^0.0.4",
