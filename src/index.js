@@ -18,13 +18,12 @@ if (!nrfSdkPath) {
 const baseConfigPath = path.join(nrfSdkPath, '/config/nrf52840/config/sdk_config.h')
 const appConfigPath = path.join(cwd, appConfigFile)
 
-// if (files.indexOf(sdkConfigFile) === -1) {
-//     console.error('sdk_config.h not found in current directory')
-//     process.exit(1)
-// }
-//
-// const filePath = path.join(cwd, sdkConfigFile)
-const filePath = '/Users/lybrus/projects/nrf/nRF5SDK160098a08e2/examples/peripheral/blinky_freertos/pca10056/blank/config/sdk_config.h'
+if (files.indexOf(sdkConfigFile) === -1) {
+    console.error('sdk_config.h not found in current directory')
+    process.exit(1)
+}
+
+const filePath = path.join(cwd, sdkConfigFile)
 
 ;(async () => {
     const baseConfig = parse(baseConfigPath)
