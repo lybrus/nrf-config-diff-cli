@@ -18,3 +18,5 @@ log
 .env.test
 
 script.js
+
+out
