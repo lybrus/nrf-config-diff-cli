@@ -25,11 +25,11 @@ if (files.indexOf(sdkConfigFile) === -1) {
     process.exit(1)
 }
 
-const filePath = path.join(cwd, sdkConfigFile)
+const sdkConfigFilePath = path.join(cwd, sdkConfigFile)
 
 ;(async () => {
     const baseConfig = parse(baseConfigPath)
-    const currentConfig = parse(filePath)
+    const currentConfig = parse(sdkConfigFilePath)
     const changed = []
     const unknown = []
 
@@ -92,4 +92,15 @@ ${unknown.map(({ key, value }) => `#define ${key} ${value}`).join('\n')}
     }
 
     console.log('Diff written to ', appConfigPath)
+
+    const { copyBase } = await inquirer.prompt([{
+        type: 'confirm',
+        name: 'copyBase',
+        message: `Do you want to replace sdk_config.h with base config?`,
+        default: false
+    }])
+
+    if (copyBase) {
+        fs.copyFileSync(baseConfigPath, sdkConfigFilePath)
+    }
 })()
