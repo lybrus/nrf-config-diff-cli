@@ -27,8 +27,6 @@ For `blinky_freertos` (in `$NRF_SDK/examples/peripheral/blinky_freertos/pca10056
 #ifndef APP_CONFIG_H__
 #define APP_CONFIG_H__
 
-#define USE_APP_CONFIG
-
 #define GPIOTE_ENABLED 1
 #define GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 4
 #define NRFX_CLOCK_ENABLED 1

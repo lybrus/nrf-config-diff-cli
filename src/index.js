@@ -64,8 +64,6 @@ const filePath = path.join(cwd, sdkConfigFile)
 ${unknown.length ? `
 #include "${appSettingsFile}"
 ` : ''}
-#define USE_APP_CONFIG
-
 ${changed.map(({ key, value }) => `#define ${key} ${value}`).join('\n')}
 
 #endif // APP_CONFIG_H__
