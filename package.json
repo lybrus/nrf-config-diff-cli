@@ -1,6 +1,6 @@
 {
     "name": "nrf-config-diff-cli",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "Config diff calculation for NRF SDK",
     "repository": "git@github.com:lybrus/nrf-config-diff-cli.git",
     "author": "Damir Rashidov <damir@rashidov.eu>",
@@ -24,7 +24,8 @@
         "lint": "eslint '**/*.{js,ts,tsx}'",
         "lint:fix": "yarn lint -- --fix",
         "prettier": "prettier '**/*' --write",
-        "script": "babel-node src/script.js"
+        "script": "babel-node src/script.js",
+        "prepublish": "yarn build"
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",
